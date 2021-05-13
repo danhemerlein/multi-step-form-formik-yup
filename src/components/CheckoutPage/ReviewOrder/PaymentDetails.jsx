@@ -1,15 +1,15 @@
-import { Grid, Typography } from '@material-ui/core';
-import moment from 'moment';
-import React from 'react';
-import useStyles from './styles';
+import { Grid, Typography } from '@material-ui/core'
+import moment from 'moment'
+import React from 'react'
+import useStyles from './styles'
 
 function PaymentDetails(props) {
-  const { formValues } = props;
-  const classes = useStyles();
-  const { nameOnCard, cardNumber, expiryDate } = formValues;
+  const { formValues } = props
+  const classes = useStyles()
+  const { nameOnCard, cardNumber, expiryDate } = formValues
   return (
-    <Grid item container direction="column" xs={12} sm={6}>
-      <Typography variant="h6" gutterBottom className={classes.title}>
+    <Grid item container direction='column' xs={12} sm={6}>
+      <Typography variant='h6' gutterBottom className={classes.title}>
         Payment details
       </Typography>
       <Grid container>
@@ -49,8 +49,7 @@ function PaymentDetails(props) {
         </React.Fragment>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default PaymentDetails;
-view raw
+export default PaymentDetails
