@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       <MaterialLayout>
-        {/* <h1>Checkout Page right here</h1> */}
         <CheckoutPage />
       </MaterialLayout>
     </div>

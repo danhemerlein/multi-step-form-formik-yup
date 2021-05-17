@@ -96,6 +96,7 @@ export default function CheckoutPage() {
                       Back
                     </Button>
                   )}
+
                   <div className={classes.wrapper}>
                     <Button
                       disabled={isSubmitting}
@@ -106,6 +107,7 @@ export default function CheckoutPage() {
                     >
                       {isLastStep ? 'Place order' : 'Next'}
                     </Button>
+
                     {isSubmitting && (
                       <CircularProgress
                         size={24}
