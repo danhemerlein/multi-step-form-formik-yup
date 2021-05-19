@@ -86,38 +86,43 @@ export default function CheckoutPage() {
             validationSchema={currentValidationSchema}
             onSubmit={_handleSubmit}
           >
-            {({ isSubmitting }) => (
-              <Form id={formId}>
-                {_renderStepContent(activeStep)}
+            {({ isSubmitting, errors, touched }) => {
+              console.log(errors)
+              console.log(touched)
 
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={_handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
+              return (
+                <Form id={formId}>
+                  {_renderStepContent(activeStep)}
 
-                  <div className={classes.wrapper}>
-                    <Button
-                      disabled={isSubmitting}
-                      type='submit'
-                      variant='contained'
-                      color='primary'
-                      className={classes.button}
-                    >
-                      {isLastStep ? 'Place order' : 'Next'}
-                    </Button>
-
-                    {isSubmitting && (
-                      <CircularProgress
-                        size={24}
-                        className={classes.buttonProgress}
-                      />
+                  <div className={classes.buttons}>
+                    {activeStep !== 0 && (
+                      <Button onClick={_handleBack} className={classes.button}>
+                        Back
+                      </Button>
                     )}
+
+                    <div className={classes.wrapper}>
+                      <Button
+                        disabled={isSubmitting}
+                        type='submit'
+                        variant='contained'
+                        color='primary'
+                        className={classes.button}
+                      >
+                        {isLastStep ? 'Place order' : 'Next'}
+                      </Button>
+
+                      {isSubmitting && (
+                        <CircularProgress
+                          size={24}
+                          className={classes.buttonProgress}
+                        />
+                      )}
+                    </div>
                   </div>
-                </div>
-              </Form>
-            )}
+                </Form>
+              )
+            }}
           </Formik>
         )}
       </React.Fragment>
